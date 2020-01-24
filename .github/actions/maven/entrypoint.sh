@@ -12,4 +12,9 @@ fi
 # Configure the user.home
 export MAVEN_OPTS="$MAVEN_OPTS -Duser.home=${MAVEN_CONFIG%%/.m2}"
 
+# If the github checkout action placed the repository somewhere else
+if [ -n "${WORK_PATH}" ]; then
+  cd "${WORK_PATH}"
+fi
+
 exec /usr/local/bin/mvn-entrypoint.sh $@

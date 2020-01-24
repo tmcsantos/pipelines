@@ -24,5 +24,6 @@ jobs:
       - name: Build
         uses: ./.github/actions/maven
         with:
+          path: scm
           args: package 
 

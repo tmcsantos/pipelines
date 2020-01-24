@@ -4,9 +4,14 @@ inputs:
   args:
     description: 'The maven arguments'
     required: true
+  path:
+    description: 'Relative path under $GITHUB_WORKSPACE where the root project is'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    WORK_PATH: ${{ inputs.path }}
   args:
     - mvn
     - --batch-mode

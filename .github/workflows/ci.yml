@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+    types: [assigned, opened, synchronize, reopened, edited, labeled, unlabeled]
+
+
+jobs:
+  test:
+    name: k8s test
+    runs-on: ubuntu-latest #self-hosted #ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Build
+        uses: ./.github/actions/maven
+        with:
+          args: package 
+

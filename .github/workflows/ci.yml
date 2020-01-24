@@ -17,7 +17,9 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2.0.0
+        with:
+          path: scm
 
       - name: Build
         uses: ./.github/actions/maven

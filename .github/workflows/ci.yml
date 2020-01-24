@@ -22,7 +22,7 @@ jobs:
           path: scm
 
       - name: Build
-        uses: ./.github/actions/maven
+        uses: ./scm/.github/actions/maven
         with:
           path: scm
           args: package 

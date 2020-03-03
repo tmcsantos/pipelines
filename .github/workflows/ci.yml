@@ -22,8 +22,5 @@ jobs:
           path: scm
 
       - name: Build
-        uses: ./scm/.github/actions/maven
-        with:
-          path: scm
-          args: package 
+        run: echo hello world
 
